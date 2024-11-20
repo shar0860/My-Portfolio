@@ -1,0 +1,82 @@
+/* #outer{
+    height: 200px;
+    width: 70px;
+    border: 2px solid black;
+    margin: 0 auto;
+    
+}
+.inner{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    transition: 1s;
+    margin: 10px;
+}
+.inner:hover{
+    border-radius: 100%;
+    border: 2px dotted black;
+    transform: rotate(180deg);
+    transform: scale(1.5);
+
+}
+#red{
+    background-color: rgb(255, 0, 0);
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+} */
+
+/* div{
+    height: 400px;
+    width : 400px;
+    margin: 50px auto;
+    border-radius: 50px;
+    background-color: limegreen;
+    box-shadow: 5px 5px 10px black;
+    background-image: url("Dipak.jpeg");
+    background-size: cover;
+    transition: 1s;
+}
+
+div:hover{
+    transform: scale(1.1);
+    border-radius: 100%;
+} */
+#container{
+    display: flex;
+    height: 500px;
+    width: 500px;
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    border: 10px  dotted black;
+
+    border-radius: 10px;
+
+}
+.items{
+    text-align: center;
+    font-size: 50px;
+}
+
+.items{
+    height: 140px;
+    width: 140px;
+    background-color: grey;
+    border: 3px solid black;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.items:hover{
+    background-color: royalblue;
+    color: aliceblue;
+    transform: scale(1.1);
+    border-radius: 100px;
+    box-shadow: 2px 2px 10px black;
+}
