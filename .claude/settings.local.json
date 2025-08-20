@@ -6,7 +6,8 @@
       "Bash(start index.html)",
       "Bash(mkdir:*)",
       "Bash(rmdir:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []
