@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Dipak Sharma - Get in touch for web development projects, collaborations, or inquiries.">
+  <meta name="keywords" content="contact, web developer, collaboration, project inquiry, Dipak Sharma">
+  <meta name="author" content="Dipak Sharma">
+  <title>Contact - Dipak Sharma | Web Developer</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Dipak Sharma</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark/light theme">
+          <span class="theme-icon sun-icon">☀️</span>
+          <span class="theme-icon moon-icon">🌙</span>
+        </button>
+        <a href="index.html" class="back-home">← Back to Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <div class="container">
+      <div class="contact-header">
+        <h1>Let's Work Together</h1>
+        <p>I'm always excited to hear about new projects and opportunities. Drop me a message and let's create something amazing!</p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="form-section">
+          <h2>Send me a message</h2>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                <span class="error-message" id="firstNameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                <span class="error-message" id="lastNameError"></span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+              <span class="error-message" id="emailError"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="">Select a subject</option>
+                <option value="project">New Project</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="job">Job Opportunity</option>
+                <option value="consultation">Consultation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." rows="6" required></textarea>
+              <span class="error-message" id="messageError"></span>
+              <div class="char-count">
+                <span id="charCount">0</span>/1000 characters
+              </div>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <span class="checkmark"></span>
+                Subscribe to my newsletter for updates on new projects and tech insights
+              </label>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" style="display: none;">
+                <span class="spinner"></span>
+                Sending...
+              </span>
+            </button>
+            
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+        
+        <div class="info-section">
+          <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>Ready to bring your ideas to life? I specialize in creating modern, responsive websites and applications that deliver exceptional user experiences.</p>
+            
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">📧</div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <p>dipaksharma.dev@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="contact-icon">💼</div>
+                <div class="contact-details">
+                  <h4>LinkedIn</h4>
+                  <p><a href="https://www.linkedin.com/in/dipak-sharma-7266782bb/" target="_blank" rel="noopener noreferrer">Connect with me</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="contact-icon">🏁</div>
+                <div class="contact-details">
+                  <h4>GitHub</h4>
+                  <p><a href="https://github.com/shar0860" target="_blank" rel="noopener noreferrer">View my work</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="contact-icon">⏱️</div>
+                <div class="contact-details">
+                  <h4>Response Time</h4>
+                  <p>Usually within 24 hours</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-highlight">
+            <h3>What I Can Help With</h3>
+            <ul class="help-list">
+              <li>✨ Full-stack web development</li>
+              <li>🎨 UI/UX design and prototyping</li>
+              <li>📱 Responsive mobile-first design</li>
+              <li>⚡ Performance optimization</li>
+              <li>🔧 Technical consulting</li>
+              <li>🚀 Project architecture planning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Dipak Sharma. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

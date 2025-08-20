@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(move Index.html index.html)",
+      "Bash(mv:*)",
+      "Bash(start index.html)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
