@@ -3,7 +3,10 @@
     "allow": [
       "Bash(move Index.html index.html)",
       "Bash(mv:*)",
-      "Bash(start index.html)"
+      "Bash(start index.html)",
+      "Bash(mkdir:*)",
+      "Bash(rmdir:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

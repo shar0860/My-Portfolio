@@ -852,7 +852,7 @@ main {
 #item2-image {
     width: 350px;
     height: 350px;
-    background-image: url(./image/Dipak.jpeg);
+    background-image: url(../images/Dipak.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1028,10 +1028,10 @@ section {
     box-shadow: var(--shadow-xl);
 }
 
-.card1 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(./image/Pokemon.jpg); }
-.card2 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(./image/color.jpg); }
-.card3 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(./image/Pokemon.jpg); }
-.card4 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(./image/color.jpg); }
+.card1 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/Pokemon.jpg); }
+.card2 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/color.jpg); }
+.card3 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/Pokemon.jpg); }
+.card4 { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/color.jpg); }
 
 .card1, .card2, .card3, .card4 {
     background-size: cover;

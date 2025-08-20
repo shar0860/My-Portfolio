@@ -167,9 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.downloadResume = function() {
         // Download actual resume file
         const link = document.createElement('a');
-        link.href = './Dipak_Sharma_Resume.pdf'; // Path to your resume file
-        link.download = 'Dipak_Sharma_Resume.pdf'; // Name for downloaded file
-        link.target = '_blank'; // Open in new tab as fallback
+        link.href = './docs/DIPAK SHARMA RESUME.pdf'; // Path to your resume file
+        link.download = 'Dipak_Sharma_Resume'; // Name for downloaded file
+        link.target = '_blank'; 
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
