@@ -1,5 +1,105 @@
 // Contact Form JavaScript with Validation and Interactive Features
 
+// Professional Contact Navbar Functionality
+class ContactNavbar {
+    constructor() {
+        this.navbar = document.querySelector('.contact-navbar');
+        this.mobileToggle = document.querySelector('.nav-toggle');
+        this.mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        this.mobileClose = document.querySelector('.mobile-nav-close');
+        this.scrollProgressBar = document.querySelector('.scroll-progress-bar');
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+        this.updateScrollProgress();
+    }
+
+    bindEvents() {
+        // Mobile menu toggle
+        if (this.mobileToggle) {
+            this.mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
+        }
+
+        // Mobile menu close button
+        if (this.mobileClose) {
+            this.mobileClose.addEventListener('click', () => {
+                this.closeMobileMenu();
+            });
+        }
+
+        // Close mobile menu when clicking overlay
+        if (this.mobileOverlay) {
+            this.mobileOverlay.addEventListener('click', (e) => {
+                if (e.target === this.mobileOverlay) {
+                    this.closeMobileMenu();
+                }
+            });
+        }
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                this.closeMobileMenu();
+            });
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            this.updateScrollProgress();
+        });
+
+        // Navbar scroll effects
+        window.addEventListener('scroll', () => {
+            this.handleNavbarScroll();
+        });
+
+        // Escape key to close mobile menu
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.navbar.classList.contains('menu-open')) {
+                this.closeMobileMenu();
+            }
+        });
+    }
+
+    toggleMobileMenu() {
+        this.navbar.classList.toggle('menu-open');
+        document.body.style.overflow = this.navbar.classList.contains('menu-open') ? 'hidden' : '';
+    }
+
+    closeMobileMenu() {
+        this.navbar.classList.remove('menu-open');
+        document.body.style.overflow = '';
+    }
+
+    updateScrollProgress() {
+        if (!this.scrollProgressBar) return;
+        
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = (scrollTop / scrollHeight) * 100;
+        
+        this.scrollProgressBar.style.width = `${Math.min(scrollProgress, 100)}%`;
+    }
+
+    handleNavbarScroll() {
+        if (!this.navbar) return;
+        
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 50) {
+            this.navbar.classList.add('scrolled');
+        } else {
+            this.navbar.classList.remove('scrolled');
+        }
+    }
+}
+
 // Theme management (shared with main site)
 class ThemeManager {
     constructor() {
@@ -33,10 +133,13 @@ class ThemeManager {
     }
 }
 
-// Initialize theme manager
-const themeManager = new ThemeManager();
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Contact Navbar
+    new ContactNavbar();
+    
+    // Initialize Theme Manager
+    new ThemeManager();
+    
     // Form elements
     const form = document.getElementById('contactForm');
     const firstName = document.getElementById('firstName');
