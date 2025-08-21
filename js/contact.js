@@ -3,7 +3,7 @@
 // Professional Contact Navbar Functionality
 class ContactNavbar {
     constructor() {
-        this.navbar = document.querySelector('.contact-navbar');
+        this.navbar = document.querySelector('.navbar');
         this.mobileToggle = document.querySelector('.nav-toggle');
         this.mobileOverlay = document.querySelector('.mobile-nav-overlay');
         this.mobileClose = document.querySelector('.mobile-nav-close');
@@ -61,19 +61,21 @@ class ContactNavbar {
 
         // Escape key to close mobile menu
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.navbar.classList.contains('menu-open')) {
+            if (e.key === 'Escape' && this.mobileOverlay.classList.contains('active')) {
                 this.closeMobileMenu();
             }
         });
     }
 
     toggleMobileMenu() {
-        this.navbar.classList.toggle('menu-open');
-        document.body.style.overflow = this.navbar.classList.contains('menu-open') ? 'hidden' : '';
+        this.mobileOverlay.classList.toggle('active');
+        this.mobileToggle.classList.toggle('active');
+        document.body.style.overflow = this.mobileOverlay.classList.contains('active') ? 'hidden' : '';
     }
 
     closeMobileMenu() {
-        this.navbar.classList.remove('menu-open');
+        this.mobileOverlay.classList.remove('active');
+        this.mobileToggle.classList.remove('active');
         document.body.style.overflow = '';
     }
 
@@ -316,18 +318,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Simulate form submission (replace with actual backend integration)
+    // Real form submission using EmailJS
     async function submitForm(formData) {
-        // Simulate network delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // Simulate random success/failure for demo purposes
-        const isSuccess = Math.random() > 0.2; // 80% success rate
-        
-        if (isSuccess) {
-            return { success: true, message: 'Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.' };
-        } else {
-            throw new Error('Sorry, there was an error sending your message. Please try again or contact me directly via email.');
+        try {
+            // Initialize EmailJS if not already done
+            if (typeof emailjs === 'undefined') {
+                throw new Error('EmailJS is not loaded. Please check your internet connection.');
+            }
+
+            // EmailJS configuration
+            const SERVICE_ID = 'your_service_id'; // Replace with your EmailJS service ID
+            const TEMPLATE_ID = 'your_template_id'; // Replace with your EmailJS template ID
+            const PUBLIC_KEY = 'your_public_key'; // Replace with your EmailJS public key
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: `${formData.firstName} ${formData.lastName}`,
+                from_email: formData.email,
+                subject: formData.subject || 'Contact Form Submission',
+                message: formData.message,
+                newsletter: formData.newsletter ? 'Yes' : 'No',
+                to_name: 'Dipak Sharma'
+            };
+
+            // Send email using EmailJS
+            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+            
+            if (response.status === 200) {
+                return { 
+                    success: true, 
+                    message: 'Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.' 
+                };
+            } else {
+                throw new Error('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            throw new Error('Sorry, there was an error sending your message. Please try again or contact me directly at dipaks4852@gmail.com');
         }
     }
 

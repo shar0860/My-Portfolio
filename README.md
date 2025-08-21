@@ -43,7 +43,7 @@ A modern, responsive portfolio website showcasing my skills and projects as a Fu
 
 ## 🚀 Live Demo
 
-Visit the live website: [Portfolio Website](https://your-username.github.io/your-repo-name)
+Visit the live website: [Portfolio Website](https://shar0860.github.io/My-Portfolio)
 
 ## 📱 Screenshots
 
@@ -57,7 +57,7 @@ Visit the live website: [Portfolio Website](https://your-username.github.io/your
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/portfolio.git
+   git clone https://github.com/shar0860/My-Portfolio.git
    ```
 
 2. **Navigate to the project directory**
@@ -81,7 +81,7 @@ Visit the live website: [Portfolio Website](https://your-username.github.io/your
 2. Go to Settings > Pages
 3. Select source: Deploy from a branch
 4. Choose `main` branch and `/ (root)` folder
-5. Your site will be available at `https://your-username.github.io/repository-name`
+5. Your site will be available at `https://shar0860.github.io/My-Portfolio`
 
 ### Netlify
 1. Connect your GitHub repository to Netlify
